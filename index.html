@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Investment Company</title>
 	<link rel="stylesheet" href="style/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -9,8 +10,56 @@
 <body>
 
 	<header>
+		<article class="user-account create" style="display: none;">
+			<div class="create-an-account">
+				<div class="user-account-header">
+					<h3>Create an account</h3>
+					<img src="img/close.png" class="clouse-modal-create" width="22px" height="22px" alt="close">					
+				</div>
+				<form action="#">
+					<h4>Hello and Welcome! Tell us a bit about you</h4>
+					<div class="input text">
+						<input type="text" placeholder="Name" required>
+					</div>
+					<div class="input email">
+						<input type="email" placeholder="E-mail" required>
+					</div>
+					<div class="input password">
+						<input type="password" placeholder="Password" required>
+					</div>
+					<input class="btn" type="submit" value="Create an account">
+				</form>
+				<div class="already-have">
+					<p>Already have an account?</p>
+					<p><a href="#" class="btn to-sing-in">Sing In</a></p>
+				</div>
+			</div>			
+		</article>
+
+		<article class="user-account sing" style="display: none;">
+			<div class="sing-in">
+				<div class="user-account-header">
+					<h3>Sing in</h3>
+					<img src="img/close.png" class="clouse-modal-sing" width="22px" height="22px" alt="close">					
+				</div>
+				<form action="#">
+					<h4>Welcome back! Nice to see you</h4>
+					<div class="input email">
+						<input type="email" placeholder="E-mail" required>
+					</div>
+					<div class="input password">
+						<input type="password" placeholder="Password" required>
+					</div>
+					<input class="btn" type="submit" value="Sing In">
+				</form>
+				<div class="already-have">
+					<p><a href="#">Fofgot your password?</a></p>
+					<p><a href="#" class="need-to-sing-up">Need to sing up?</a></p>
+				</div>
+			</div>			
+		</article>
 		<section class="top">
-			<div class="conteiner">
+			<div class="container">
 				<div class="logo">
 					<a><i>Investment</i>
 						<br><b>Company</b></a>
@@ -23,11 +72,11 @@
 				</ul>
 				<section class="lang-social-user">
 					<section class="lang-social">
-						<div class="lang  lang-en" onclick="langOpen()">
+						<div class="lang  lang-en">
 							<ul class="lang-open" style="display: none;">
-								<li onclick="en()"><a href="index.html">en</a></li>
-								<li onclick="ru()"><a href="#">ru</a></li>
-								<li onclick="es()"><a href="#">es</a></li>
+								<li class="en"><a href="index.html">en</a></li>
+								<li class="ru"><a href="#">ru</a></li>
+								<li class="es"><a href="#">es</a></li>
 							</ul>
 						</div>
 						<ul class="social">
@@ -37,14 +86,15 @@
 						</ul>
 					</section>
 					<ul class="user">
-						<li><a href="#">Create an account</a></li>
-						<li><a href="#">Sing In</a></li>
+						<li class="to-sing-up"><a href="#">Create an account</a></li>
+						<li id="sing-in"><a href="#">Sing In</a></li>
 					</ul>
+					
 				</section>
 			</div>
 		</section>
 
-		<nav class="conteiner">
+		<nav class="container">
 			<ul>
 				<li class="active"><a href="index.html" class="btn">Home</a></li>
 				<li><a href="#">About Us</a></li>
@@ -60,15 +110,16 @@
 			<br>the way to your new life</h1>
 
 		<ul class="sing-up">
-			<li><a href="#" class="btn">Sing Up Free</a></li>
+			<li><a href="#" class="btn to-sing-up">Sing Up Free</a></li>
 			<li>or</li>
 			<li><a href="#" class="btn">Learn More</a></li>
 		</ul>
+
 	</header>
 
-
+	
 	<section class="icons">
-		<div class="conteiner">
+		<div class="container">
 			<div class="icon">
 				<h3>Competitive Advantage </h3>
 				<p>We are able to close deals at lightning speed thanks to established due diligence practices and a flat corporate structure.</p>
@@ -94,7 +145,7 @@
 
 	<section class="work">
 		<h2>How it work</h2>
-		<div class="conteiner">
+		<div class="container">
 			<div>
 				<p>Fusce iaculis condimentum nulla id convallis.</p>
 				<video>
@@ -107,7 +158,7 @@
 
 			<div class="fusce">
 				<p>Fusce ornare, quam et vestibulum lobortis, diam sem adipiscing lorem, id fringilla dolor metus nec quam. Sed ac egestas mauris.</p>
-				<a href="#" class="btn">Sing Up Now</a>
+				<a href="#" class="btn to-sing-up">Sing Up Now</a>
 			</div>
 		</div>
 	</section>
@@ -116,7 +167,7 @@
 	<section class="about">
 		<h2>About Us</h2>
 
-		<div class="conteiner">
+		<div class="container">
 			<div class="read">
 				<p>Fusce iaculis condimentum nulla id convallis. Cras imperdiet sollicitudin dolor nec aliquet. Fusce euismod tincidunt dapibus. Aenean semper est vel dictum scelerisque.</p>
 				<p>Curabitur ullamcorper dapibus velit. Proin malesuada vestibulum libero, ut tincidunt nulla rhoncus id. Suspendisse ac porttitor justo. Curabitur a varius ipsum. Etiam a volutpat enim.</p>
@@ -133,14 +184,14 @@
 	<section class="plane">
 		<p>invest with us now and in six months you expect stupendous rise</p>
 
-		<div class="down-arrow" onclick="openBlock()" id="arrow">
+		<div class="down-arrow" id="arrow">
 			<img src="img/plane-buttom.png" width="140px" height="140px" alt="Play">
 		</div>
 	</section>
 
 <section class="clouse" id="open">
 	<section class="plan">
-		<div class="conteiner">
+		<div class="container">
 			<p class="topic">Fusce ornare, quam et vestibulum lobortis, diam sem adipiscing lorem, id fringilla dolor metus nec quam. Sed ac egestas mauris.</p>
 		
 			<div class="items">
@@ -189,7 +240,7 @@
 
 	<section class="news">
 		<h2>Latest News</h2>
-		<div class="conteiner">
+		<div class="container">
 			<div class="button  block">
 				<a href="#">&#x2190;</a>
 			</div>
@@ -214,11 +265,11 @@
 	</section>
 
 
-	<section class="testimonials  conteiner">
+	<section class="testimonials  container">
 		
 		<div>
 			<h2>Testimonials</h2>			
-			<div class="conteiner">
+			<div class="container">
 				<div class="button  block">
 					<a href="#">&#x2190;</a>
 				</div>
@@ -242,7 +293,7 @@
 		<div>
 			<h2>Today’s Poll</h2>
 
-			<form class="conteiner">	
+			<form class="container">	
 				<h3>What is Investment Plane?</h3>
 				<input type="radio" id="Standart" name="plane">
 				<label for="Standart">Standart</label>
@@ -260,7 +311,7 @@
 </section>
 
 	<section class="encryption">
-		<div class="conteiner">
+		<div class="container">
 			<div class="secure">
 				<h2>Secure Encryption</h2>
 				<a href="#">thawte</a>
@@ -281,7 +332,7 @@
 
 
 	<footer>
-		<div class="conteiner">
+		<div class="container">
 			<nav>
 				<ul class="nav-footer">
 					<li class="active"><a href="index.html">Home</a></li>
@@ -311,7 +362,7 @@
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<div class="footer-bottom-conteiner">
+			<div class="footer-bottom-container">
 				<p class="dicom">by <strong>DICOM</strong> TECHNOLOGY</p>
 				<ul class="terms">
 					<li><a href="#">Terms & Conditions</a></li>
